@@ -2,14 +2,15 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    align-items: center;
+    /* gap: 10px; */
+    align-items: flex-start;
     height: 100vh;
     margin: 0;
     background-color: #05000c;
   }
   
   .notice_text{
+    margin: 20px 10px;
     padding: 10px 20px;
     background-color: #f4ab36;
     color: white;
@@ -17,7 +18,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
-
   
   
   #notificationContainer {

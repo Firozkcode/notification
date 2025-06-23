@@ -47,9 +47,13 @@ function notificationMessage(type, messageText) {
   notificationContainer.appendChild(notification);
 
   // Remove the notification after 5 seconds
-  setTimeout(() => {
-      notification.remove();
-  }, 5000);
+    setTimeout(() => {
+        notification.classList.add("slide-out");
+        // Wait for the animation to finish (0.4s), then remove
+        setTimeout(() => {
+            notification.remove();
+        }, 400);
+    }, 5000);
 }
 
 // Example Usage:

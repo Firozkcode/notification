@@ -47,6 +47,10 @@ body {
     background-color: #0dcb75;
   }
 
+  .processing{
+    background-color: #f4ab36;
+  }
+
   .error{
     background-color: #f43636;
   }

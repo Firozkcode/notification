@@ -31,7 +31,11 @@ function notificationMessage(type, messageText) {
   closeBtn.className = "close-btn";
   closeBtn.innerHTML = "&times;";
   closeBtn.addEventListener("click", () => {
-      notification.remove();
+      // notification.remove();
+    notification.classList.add("slide-out");
+    setTimeout(() => {
+            notification.remove();
+        }, 400);
   });
 
   // Add the progress bar

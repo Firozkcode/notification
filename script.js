@@ -60,6 +60,25 @@ function notificationMessage(type, messageText) {
     }, 5000);
 }
 
+
+// For triggereing via Url Parameters
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const type = urlParams.get('type');
+  const message = urlParams.get('message');
+
+  if (type && message) {
+      // Show notification
+      notificationMessage(type, decodeURIComponent(message));
+
+      // After 5 seconds, remove query params without changing page
+      setTimeout(function() {
+          const baseUrl = window.location.origin + window.location.pathname;
+          window.history.replaceState({}, document.title, baseUrl);
+      }, 5000);
+  }
+});
+
 // Example Usage:
 document.getElementById("notice_text_error").addEventListener("click", () => {
   notificationMessage("error", "An error occurred. Please try again.");
@@ -74,3 +93,7 @@ document.getElementById("notice_text_processing").addEventListener("click", () =
 document.getElementById("notice_text_success").addEventListener("click", () => {
   notificationMessage("success", "Completed Successfully!");
 });
+
+
+
+
